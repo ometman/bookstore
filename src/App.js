@@ -11,7 +11,7 @@ import Root, {
 // import ErrorPage from './components/ErrorPage';
 import Books, {
 // loader as contactLoader,
-} from './routes/BKs';
+} from './components/Books';
 
 // import Header from './components/Header';
 
