@@ -133,7 +133,8 @@ ul.interact1 li {
 .m-book-card {
   align-self: start;
   width: 25%;
-  background: green;
+  margin-top: 1rem;
+  height: 3rem;
 }
 
 .r-book-card {
