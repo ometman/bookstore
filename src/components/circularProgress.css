@@ -1,6 +1,6 @@
 .cp-container {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   height: auto;
   gap: 1.313rem;
 }
