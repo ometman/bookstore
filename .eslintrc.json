@@ -21,7 +21,7 @@
       "no-shadow": "off",
       // windows linebreaks when not in production environment
       // "linebreak-style": ["error", "unix | windows"]
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": false}]
     },
     "overrides": [
       {

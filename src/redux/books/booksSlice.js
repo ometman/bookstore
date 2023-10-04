@@ -1,29 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
-import bookItems from '../../components/bookItems';
 
 const initialState = {
-  bookItems,
-  bookQty: 0,
-  isLoading: true,
+  allbooks: [],
 };
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (state) => {
-      state.bookItems = [];
+    addBook: (state, action) => {
+      const bookData = action.payload;
+      state.allbooks.unshift({
+        id: 34,
+        category: 'Action',
+        title: bookData.title,
+        author: bookData.author,
+        chapter: 'Chapter 3',
+        comments: [],
+      });
     },
     removeBook: (state, action) => {
       const itemId = action.payload;
-      state.bookItems = state.bookItems.filter((item) => item.id !== itemId);
+      state.allbooks = state.allbooks.filter((item) => item.id !== itemId);
     },
   },
 });
 
-console.log(booksSlice);
-
 export const {
-  addBook, removeItem, editBook,
+  addBook, removeBook,
 } = booksSlice.actions;
 export default booksSlice.reducer;
