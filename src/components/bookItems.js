@@ -7,7 +7,6 @@ const bookItems = [
     title: 'The Hunger Grames',
     author: 'Sussan Collins',
     chapter: 'Chapter 17',
-    comments: [],
   },
   {
     id: uuidv4(),
@@ -15,7 +14,6 @@ const bookItems = [
     title: 'Dune',
     author: 'Frank Herber',
     chapter: 'Chapter 3: "A Lesson Learned"',
-    comments: [],
   },
   {
     id: uuidv4(),
@@ -23,8 +21,28 @@ const bookItems = [
     title: 'Capital in the 21st Century',
     author: 'Sussan Collins',
     chapter: 'Introduction',
-    comments: [],
   },
 ];
 
-export default bookItems;
+const allbooks = [
+  {
+    itemId: 'item1',
+    title: 'The Great Gatsby',
+    author: 'John Smith',
+    category: 'Fiction',
+  },
+  {
+    itemId: 'item2',
+    title: 'Anna Karenina',
+    author: 'Leo Tolstoy',
+    category: 'Fiction',
+  },
+  {
+    itemId: 'item3',
+    title: 'The Selfish Gene',
+    author: 'Richard Dawkins',
+    category: 'Nonfiction',
+  },
+];
+
+export { bookItems, allbooks };

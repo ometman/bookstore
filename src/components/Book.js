@@ -1,19 +1,27 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { removeBook } from '../redux/books/booksSlice';
 import CircularProgress from './CircularProgressbar';
 
 const Book = ({ book }) => {
   const {
-    category, title, author, chapter,
+    itemId, title, author, category,
   } = book;
+  // const {
+  //   id, category, title, author, chapter,
+  // } = book;
 
   Book.propTypes = {
     book: PropTypes.node.isRequired,
+    // id: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    chapter: PropTypes.string.isRequired,
+    // chapter: PropTypes.string.isRequired,
   };
+
+  const dispatch = useDispatch();
 
   return (
     <div className="book-card">
@@ -32,7 +40,13 @@ const Book = ({ book }) => {
             <button type="button" className="comment-btn">Comments</button>
           </li>
           <li>
-            <button type="button" className="delete-btn">
+            <button
+              type="button"
+              className="delete-btn"
+              onClick={() => dispatch(
+                removeBook(itemId),
+              )}
+            >
               Delete
             </button>
           </li>
@@ -46,7 +60,7 @@ const Book = ({ book }) => {
       </div>
       <div className="r-book-card">
         <p>CURRENT CHAPTER</p>
-        <strong className="chapter">{chapter}</strong>
+        <strong className="chapter">Chapter 2</strong>
         <button type="button" className="updatebtn">UPDATE PROGRESS</button>
       </div>
     </div>
