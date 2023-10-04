@@ -5,7 +5,9 @@ export default function NewBookForm() {
       <form action="" method="" id="newbookform" className="newbookform">
         <input id="booktitle" className="booktitle" type="text" placeholder="Book title" />
         <input id="bookauthor" className="bookauthor" type="text" placeholder="Author" />
-        <button type="submit" className="submitbtn">Submit</button>
+        <button type="submit" className="submitbtn">
+          Submit
+        </button>
       </form>
     </div>
   );

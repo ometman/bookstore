@@ -93,7 +93,7 @@ ul.nav-items li {
 
 /* books */
 
-ul.book-container {
+/* ul.book-container {
   list-style: none;
 }
 
@@ -101,7 +101,7 @@ ul.book-container li {
   list-style: none;
   margin: 1rem 0;
   height: auto;
-}
+} */
 
 .book-card {
   display: flex;
@@ -117,6 +117,7 @@ ul.l-book-card {
   justify-content: flex-start;
   width: 50%;
   background: rgb(255, 255, 255);
+  list-style: none;
 }
 
 ul.l-book-card li {
@@ -128,6 +129,7 @@ ul.interact1 {
   gap: 1rem;
   margin-top: 1rem;
   padding: 1px;
+  list-style: none;
 }
 
 ul.interact1,
@@ -140,14 +142,14 @@ ul.interact1 li {
 }
 
 .m-book-card {
-  align-self: start;
+  align-self: flex-start;
   width: 25%;
   margin-top: 1rem;
   height: 3rem;
 }
 
 .r-book-card {
-  align-self: start;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -163,6 +165,12 @@ ul.interact1 li {
 }
 
 /* add book form */
+
+.no-books {
+  text-align: center;
+  padding-top: 5%;
+}
+
 .newbookform-title {
   padding-left: 1rem;
 }
@@ -221,4 +229,24 @@ ul.interact1 li {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.comment-btn,
+.edit-btn,
+.delete-btn {
+  width: 100%;
+  color: rgb(36, 144, 255);
+  background: #fff;
+  padding: 5%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid rgb(36, 144, 255);
+  box-shadow: 1px 1px 0 1px rgb(36, 144, 255);
+}
+
+.comment-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
+  background: rgb(36, 144, 255);
+  color: #fff;
 }
