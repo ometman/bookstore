@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { allbooks } from '../../components/bookItems';
+import allcategories from '../../components/categoryItems';
 
 const initialState = {
   allbooks,
@@ -16,7 +17,7 @@ const booksSlice = createSlice({
         itemId: uuidv4(),
         title: bookData.title,
         author: bookData.author,
-        category: 'Action',
+        category: allcategories[0].category,
       });
     },
     removeBook: (state, action) => {

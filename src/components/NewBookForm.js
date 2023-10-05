@@ -29,8 +29,8 @@ export default function NewBookForm() {
     <div className="form-container">
       <h2 className="newbookform-title">Add New Book</h2>
       <form id="newbookform" className="newbookform" onSubmit={handleSubmit}>
-        <input name="title" value={formData.title} className="booktitle" type="text" placeholder="Book title" onChange={handleChange} />
-        <input name="author" value={formData.author} className="bookauthor" type="text" placeholder="Author" onChange={handleChange} />
+        <input name="title" value={formData.title} className="booktitle" required type="text" placeholder="Book title" onChange={handleChange} />
+        <input name="author" value={formData.author} className="bookauthor" required type="text" placeholder="Author" onChange={handleChange} />
         <button type="submit" className="submitbtn">
           Submit
         </button>

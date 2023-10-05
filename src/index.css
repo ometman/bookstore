@@ -39,6 +39,10 @@ body {
   background: #f5f6fa;
 }
 
+a {
+  text-decoration: none;
+}
+
 #root {
   display: flex;
   height: 100%;
@@ -92,16 +96,6 @@ ul.nav-items li {
 }
 
 /* books */
-
-/* ul.book-container {
-  list-style: none;
-}
-
-ul.book-container li {
-  list-style: none;
-  margin: 1rem 0;
-  height: auto;
-} */
 
 .book-card {
   display: flex;
@@ -204,6 +198,11 @@ ul.interact1 li {
   border-radius: 4px;
 }
 
+.booktitle,
+.bookauthor {
+  padding: 0.5%;
+}
+
 .submitbtn {
   width: 20%;
   height: 2rem;
@@ -249,4 +248,15 @@ ul.interact1 li {
 .delete-btn:hover {
   background: rgb(36, 144, 255);
   color: #fff;
+}
+
+/* category */
+
+.category-container {
+  width: auto;
+  text-align: center;
+}
+
+.categories {
+  margin-top: 5%;
 }
