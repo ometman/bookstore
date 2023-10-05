@@ -8,17 +8,12 @@ const Book = ({ book }) => {
   const {
     itemId, title, author, category,
   } = book;
-  // const {
-  //   id, category, title, author, chapter,
-  // } = book;
 
   Book.propTypes = {
     book: PropTypes.node.isRequired,
-    // id: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    // chapter: PropTypes.string.isRequired,
   };
 
   const dispatch = useDispatch();
