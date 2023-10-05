@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
+import { allbooks } from '../../components/bookItems';
+import allcategories from '../../components/categoryItems';
 
 const initialState = {
-  allbooks: [],
+  allbooks,
 };
 
 const booksSlice = createSlice({
@@ -10,18 +13,16 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       const bookData = action.payload;
-      state.allbooks.unshift({
-        id: 34,
-        category: 'Action',
+      state.allbooks.push({
+        itemId: uuidv4(),
         title: bookData.title,
         author: bookData.author,
-        chapter: 'Chapter 3',
-        comments: [],
+        category: allcategories[0].category,
       });
     },
     removeBook: (state, action) => {
       const itemId = action.payload;
-      state.allbooks = state.allbooks.filter((item) => item.id !== itemId);
+      state.allbooks = state.allbooks.filter((item) => item.itemId !== itemId);
     },
   },
 });
