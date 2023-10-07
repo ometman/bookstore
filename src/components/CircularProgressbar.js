@@ -1,6 +1,6 @@
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import './circularProgress.css';
+import '../style/circularProgress.css';
 import React from 'react';
 
 function CircularProgress() {

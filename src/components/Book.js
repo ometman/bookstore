@@ -1,65 +1,47 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import '../style/book.css';
 import PropTypes from 'prop-types';
-import { removeBook } from '../redux/books/booksSlice';
+import { useDispatch } from 'react-redux';
+import { removeBookByThunk } from '../redux/books/booksSlice';
 import CircularProgress from './CircularProgressbar';
 
-const Book = ({ book }) => {
-  const {
-    itemId, title, author, category,
-  } = book;
-
-  Book.propTypes = {
-    book: PropTypes.node.isRequired,
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-  };
-
+function Book({ book }) {
   const dispatch = useDispatch();
+  const chapterCurrent = ['Introduction', 'Chapter 1', 'Chapter 2', 'Chapter 3: A Lesson Learned', 'Chapter 4', 'Chapter 7', 'Chapter 17'];
 
   return (
     <div className="book-card">
-      <ul className="l-book-card">
-        <li>
-          <strong>{category}</strong>
-        </li>
-        <li>
-          <h2>{title}</h2>
-        </li>
-        <li className="author">
-          {author}
-        </li>
-        <ul className="interact1">
-          <li>
-            <button type="button" className="comment-btn">Comments</button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="delete-btn"
-              onClick={() => dispatch(
-                removeBook(itemId),
-              )}
-            >
-              Delete
-            </button>
-          </li>
-          <li>
-            <button type="button" className="edit-btn">Edit</button>
-          </li>
-        </ul>
-      </ul>
-      <div className="m-book-card">
+      <div className="book-detail">
+        <h5>{book.category}</h5>
+        <h2>{book.title}</h2>
+        <h4>{book.author}</h4>
+        <div className="btn-panel">
+          <button type="button" onClick={() => { }}>Comments</button>
+          <button type="button" onClick={() => { dispatch(removeBookByThunk(book.item_id)); }}>Remove</button>
+          <button type="button" onClick={() => { }}>Edit</button>
+        </div>
+      </div>
+      <div className="progress-bar">
         <CircularProgress />
       </div>
-      <div className="r-book-card">
+      <div className="Line-2" />
+      <div className="chapter-info">
         <p>CURRENT CHAPTER</p>
-        <strong className="chapter">Chapter 2</strong>
-        <button type="button" className="updatebtn">UPDATE PROGRESS</button>
+        <h3>{chapterCurrent[Math.floor(Math.random() * chapterCurrent.length)]}</h3>
+        <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>
+
   );
+}
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Book;

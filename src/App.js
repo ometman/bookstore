@@ -1,20 +1,20 @@
-import {
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Root from './routes/Root';
 import Category from './routes/Category';
-import Home from './routes/Home';
-import './App.css';
+import Books from './components/Books';
+import './style/index.css';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Root />}>
-        <Route path="Home" element={<Home />} />
-        <Route path="Category" element={<Category />} />
-      </Route>
-    </Routes>
+    <div className="parent-container">
+      <Root />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/Category" element={<Category />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
