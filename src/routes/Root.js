@@ -1,21 +1,20 @@
-import { Link, Outlet } from 'react-router-dom';
+import React from 'react';
+import '../style/navigation.css';
+import { NavLink } from 'react-router-dom';
+import userImg from '../assets/user.png';
 
 function Root() {
   return (
-    <div className="root-container">
-      <div className="header">
-        <h1 className="heading">
-          Bookstore CMS
-        </h1>
-        <nav className="navbar">
-          <ul className="nav-items">
-            <li><Link to="home">BOOK</Link></li>
-            <li><Link to="category">CATEGORY</Link></li>
-          </ul>
-        </nav>
+    <header className="nav-head">
+      <div className="nav">
+        <p>Bookstore CMS</p>
+        <ul className="nav-items">
+          <li className="nav-link"><NavLink to="/">BOOKS</NavLink></li>
+          <li className="nav-link"><NavLink to="/Category">CATEGORIES</NavLink></li>
+        </ul>
       </div>
-      <Outlet />
-    </div>
+      <img src={userImg} alt="user" />
+    </header>
   );
 }
 
