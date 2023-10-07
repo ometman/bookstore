@@ -16,9 +16,9 @@ function Book({ book }) {
         <h2>{book.title}</h2>
         <h4>{book.author}</h4>
         <div className="btn-panel">
-          <button type="button" onClick={() => { }}>Comments</button>
-          <button type="button" onClick={() => { dispatch(removeBookByThunk(book.item_id)); }}>Remove</button>
-          <button type="button" onClick={() => { }}>Edit</button>
+          <button className="comment-btn" type="button" onClick={() => { }}>Comments</button>
+          <button className="delete-btn" type="button" onClick={() => { dispatch(removeBookByThunk(book.item_id)); }}>Remove</button>
+          <button className="edit-btn" type="button" onClick={() => { }}>Edit</button>
         </div>
       </div>
       <div className="progress-bar">
